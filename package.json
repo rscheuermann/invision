@@ -1,0 +1,43 @@
+{
+  "name": "invision-code-challenge",
+  "version": "1.0.0",
+  "description": "InVision Code Challenge - Producer/Consumer NodeJS application - by Ryan Scheuermann",
+  "scripts": {
+    "start": "node ./consumer.js",
+    "producer": "node ./producer.js",
+    "lint": "jshint **/*.js",
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=test PORT=3003 LOGDIR=./logs/test/ mocha $npm_package_config_test_opts",
+    "coverage": "NODE_ENV=test PORT=3003 LOGDIR=./logs/test/ istanbul cover _mocha -- $npm_package_config_test_opts"
+  },
+  "config": {
+    "test_opts": "--require tests/bootstrap.js --reporter spec --recursive tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rscheuermann/invision.git"
+  },
+  "author": "Ryan Scheuermann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rscheuermann/invision/issues"
+  },
+  "homepage": "https://github.com/rscheuermann/invision",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "istanbul": "^0.3.17",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "nock": "^2.10.0",
+    "sinon": "^1.15.4",
+    "supertest": "^1.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "connect": "^3.4.0",
+    "mkdirp": "^0.5.1",
+    "winston": "^1.0.1"
+  },
+  "engine": "node 0.12.7"
+}
