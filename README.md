@@ -138,23 +138,23 @@ Lines        : 96.91% ( 157/162 )
 ----
   Computes the result of a mathematical expression in the form "x + y = "
 
-  Addition is supported using syntax:
+  Addition:
   
-     "1 + 2 = "
+     1 + 2 = 
   
   Subtraction:
   
-     "2 - 1 = "
+     2 - 1 = 
   
   Multiplication:
   
-     "1 * 2 = "
+     1 * 2 = 
   
   Division:
   
-     "1 / 2 = "
+     1 / 2 = 
   
-  Additionally, negative numbers and numbers containing decimals are supported
+  Positive, negative, and floating point numbers are supported
 
 * **URL**
 
