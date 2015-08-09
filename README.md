@@ -131,6 +131,75 @@ Lines        : 96.91% ( 157/162 )
 ================================================================================
 ```
 
+
+## REST API
+
+**Compute**
+----
+  Computes the result of a mathematical expression in the form "x + y = "
+
+  Addition is supported using syntax:
+  
+     "1 + 2 = "
+  
+  Subtraction:
+  
+     "2 - 1 = "
+  
+  Multiplication:
+  
+     "1 * 2 = "
+  
+  Division:
+  
+     "1 / 2 = "
+  
+  Additionally, negative numbers and numbers containing decimals are supported
+
+* **URL**
+
+  /compute
+
+* **Method:**
+  
+  `POST`
+  
+* **Data Params**
+
+ * **Content-Type:** text/plain
+ * **Content:** `1 + 2 = ` - Math expression to evaluate
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** `1 + 2 = 3`
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** ``1+2` must be in the form of a math expression, e.g. `2+3=``
+
+  OR
+
+  * **Code:** 405 METHOD NOT ALLOWED <br />
+
+  OR
+
+  * **Code:** 406 NOT ACCEPTABLE <br />
+
+* **Sample Call:**
+
+
+  ```javascript
+    agent.post({
+            url: 'http://localhost/compute,
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            body: '2 + 3 = '
+        });
+  ```
+
 ## UML Activity Diagram
 
 ![UML Activity Diagram](uml-activity-diagram.png)
